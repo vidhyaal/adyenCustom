@@ -42,7 +42,7 @@ switch($_GET["action"]) {
 	case "pay":
 		
 		$client = new \Adyen\Client();
-		$client->setXApiKey("AQE1hmfxJo/OaR1Kw0m/n3Q5qf3Ve55dHZxYTFdTxWq+l3JOk8J4BA+ztqPuS4G6vYkJoj+c4MIQwV1bDb7kfNy1WIxIIkxgBw==-+g+FdHJB1s/8mcg/evWIDkJgGZRqO7hMsodFya1e7f0=-Bg2vV8qEgP65bdMd");
+		$client->setXApiKey("AQE1hmfxJo/OaR1Kw0m/n3Q5qf3Ve55dHZxYTFdTxWq+l3JOk8J4BA+ztqPuS4G6vYkJoj+c4MIQwV1bDb7kfNy1WIxIIkxgBw==-cpyGy0LKZtWHM3D+Mk38kzhN3F+nlAtza4Rf9jFsNO8=-h4tyr9I25QRa4GEV");
 		$client->setEnvironment(\Adyen\Environment::TEST);
 
 		$service = new \Adyen\Service\Checkout($client);
@@ -57,7 +57,24 @@ switch($_GET["action"]) {
 		  "channel" => "Web"
 		);
 		$result = $service->paymentMethods($params);
-		if (is_array($result['paymentMethods'])){
+	break;	
+		
+	}
+
+}
+?>
+<HTML>
+<HEAD>
+<TITLE>Simple PHP Shopping Cart</TITLE>
+<link href="style.css" type="text/css" rel="stylesheet" />
+</HEAD>
+<BODY>
+<div id="shopping-cart">
+<div class="txt-heading">Shopping Cart</div>
+
+<a id="btnEmpty" href="index.php?action=pay">Pay now</a>
+<?php
+if (is_array($result['paymentMethods'])){
 			foreach ($result['paymentMethods'] as $k)
 			{
 				if (is_array($k)){
@@ -78,25 +95,10 @@ switch($_GET["action"]) {
 			}
 					
 			// Pass the response to your front end
-		break;	
+		
 
 		}
-		
-}
-}
-?>
-<HTML>
-<HEAD>
-<TITLE>Simple PHP Shopping Cart</TITLE>
-<link href="style.css" type="text/css" rel="stylesheet" />
-</HEAD>
-<BODY>
-<div id="shopping-cart">
-<div class="txt-heading">Shopping Cart</div>
-
-<a id="btnEmpty" href="index.php?action=pay">Pay now</a>
-
-
+		?>
 <?php
 if(isset($_SESSION["cart_item"])){
     $total_quantity = 0;
