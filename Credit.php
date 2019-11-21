@@ -79,7 +79,7 @@ required
 
 <div class="row">
 <div class="col">
-<button class="btn btn-success btn-lg btn-block" type="submit" onClick="alert('Form submitted!')">Pay Now</button>
+<button class="btn btn-success btn-lg btn-block" type="submit">Pay Now</button>
 </div>
 </div>
 <div class="row" style="display:none;">
@@ -112,7 +112,7 @@ $service = new \Adyen\Service\Checkout($client);
 $params = array(
   "amount" => array(
     "currency" => "EUR",
-    "value" => 100000
+    "value" => 10000
   ),
   "reference" => "12345",
   "paymentMethod" => array(
@@ -123,7 +123,7 @@ $params = array(
     "holderName"=>"John Smith",
     "cvc"=> "737"
   ),
-  "returnUrl" => "http://localhost/cart/success.php",
+  "returnUrl" => "success.php",
   "merchantAccount" => "SupportRecruitementCOM"
 );
 $result = $service->payments($params);
