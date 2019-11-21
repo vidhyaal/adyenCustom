@@ -10,7 +10,7 @@ session_start();
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <body>
-<form name="ccForm" method="post" action='/cart/success.php'>
+<form name="ccForm" method="post" action='success.php'>
 <div class="container">
 <div class="row">
 <!-- You can make it whatever width you want. I'm making it full width
@@ -79,7 +79,7 @@ required
 
 <div class="row">
 <div class="col">
-<button class="btn btn-success btn-lg btn-block" type="submit" onClick="alert('Form submitted!')">Pay Now</button>
+<button class="btn btn-success btn-lg btn-block" type="submit">Pay Now</button>
 </div>
 </div>
 <div class="row" style="display:none;">
@@ -112,7 +112,7 @@ $service = new \Adyen\Service\Checkout($client);
 $params = array(
   "amount" => array(
     "currency" => "EUR",
-    "value" => 100000
+    "value" => 10000
   ),
   "reference" => "12345",
   "paymentMethod" => array(
@@ -123,7 +123,7 @@ $params = array(
     "holderName"=>"John Smith",
     "cvc"=> "737"
   ),
-  "returnUrl" => "http://localhost/cart/success.php",
+  "returnUrl" => "success.php",
   "merchantAccount" => "SupportRecruitementCOM"
 );
 $result = $service->payments($params);
