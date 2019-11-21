@@ -128,7 +128,8 @@ $params = array(
 );
 $result = $service->payments($params);
 $_SESSION['result'] = $result;
-//print_r($result) ;
+ echo "<pre>";
+ print_r($result) ;
 
 ?>
 </html>
