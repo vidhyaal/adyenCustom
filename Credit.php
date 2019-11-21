@@ -128,6 +128,7 @@ $params = array(
 );
 $result = $service->payments($params);
 $_SESSION['result'] = $result;
+ $_COOKIE['res'] = $result;
  echo "<pre>";
  print_r($result) ;
 
