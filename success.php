@@ -10,13 +10,4 @@ echo "<body><h1>Payment Refused!</h1></body>";
 echo "<pre>";
 print_r($res);
 ?>
-<html>
-    <head>
-        <title>
-        Success page
-        </title>
-    </head>
-   
-    
-    
-</html>
+
