@@ -112,7 +112,7 @@ $service = new \Adyen\Service\Checkout($client);
 $params = array(
   "amount" => array(
     "currency" => "EUR",
-    "value" => 1000
+    "value" => 100000
   ),
   "reference" => "12345",
   "paymentMethod" => array(
@@ -123,7 +123,7 @@ $params = array(
     "holderName"=>"John Smith",
     "cvc"=> "737"
   ),
-  "returnUrl" => "http://localhost/cart/success.html",
+  "returnUrl" => "http://localhost/cart/success.php",
   "merchantAccount" => "SupportRecruitementCOM"
 );
 $result = $service->payments($params);
