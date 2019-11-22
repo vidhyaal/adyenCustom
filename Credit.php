@@ -79,7 +79,7 @@ required
 
 <div class="row">
 <div class="col">
-<button class="btn btn-success btn-lg btn-block" type="submit">Pay Now</button>
+<button class="btn btn-success btn-lg btn-block" type="submit" onClick="alert('Form submitted!')">Pay Now</button>
 </div>
 </div>
 <div class="row" style="display:none;">
@@ -91,15 +91,9 @@ required
 </div>
 </div>            
 <!-- CREDIT CARD FORM ENDS HERE -->
-
-
 </div>            
-
-
-
 </div>
 </div>
 </form>
 </body>
-
 </html>
