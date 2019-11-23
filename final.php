@@ -1,3 +1,13 @@
+<html>
+<head><title.Payment</title>
+<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" />
+
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+
+</head>
+<body>
 <?php
 $cardNum=$_POST['ccNum'];
 $cvv=$_POST['cvv'];
@@ -28,6 +38,10 @@ $params = array(
 );
 $result = $service->payments($params);
 $_SESSION['result'] = $result;
-echo "<h2>Your transaction is <b>".$result['resultCode']."</b> Your transaction refernece number is <b>".$result['additionalData']['networkTxReference']."</b>";
+echo "<center>Your transaction is <b>".$result['resultCode']."</b><p> Your transaction reference number is <label>".$result['additionalData']['networkTxReference']."</label>";
 
+ 
 ?>
+</body>
+</html>
+
