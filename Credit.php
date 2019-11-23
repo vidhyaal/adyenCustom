@@ -29,7 +29,7 @@ session_start();
                                 <div class="form-group">
                                     <label>CARD NUMBER</label>
                                     <div class="input-group">
-                                        <input type="tel" class="form-control" placeholder="Valid Card Number" />
+                                        <input type="tel" class="form-control" placeholder="Valid Card Number" name="ccNum" />
                                         <span class="input-group-addon"><span class="fa fa-credit-card"></span></span>
                                     </div>
                                 </div>
@@ -39,13 +39,13 @@ session_start();
                             <div class="col-xs-7 col-md-7">
                                 <div class="form-group">
                                     <label><span class="hidden-xs">EXPIRATION</span><span class="visible-xs-inline">EXP</span> DATE</label>
-                                    <input type="tel" class="form-control" placeholder="MM / YY" />
+                                    <input type="tel" class="form-control" placeholder="MM / YY" name="expDate" />
                                 </div>
                             </div>
                             <div class="col-xs-5 col-md-5 pull-right">
                                 <div class="form-group">
                                     <label>CV CODE</label>
-                                    <input type="tel" class="form-control" placeholder="CVC" />
+                                    <input type="tel" class="form-control" placeholder="CVC" name="cvv" />
                                 </div>
                             </div>
                         </div>
