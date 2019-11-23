@@ -1,4 +1,7 @@
 <?php
+$cardNum=$_POST['ccNum'];
+$cvv=$_POST['cvv'];
+$expDate=$_POST['expDate'];
 require __DIR__ . '/vendor/autoload.php';
 // Set your X-API-KEY with the API key from the Customer Area.
 $client = new \Adyen\Client();
@@ -14,11 +17,11 @@ $params = array(
   "reference" => "12345",
   "paymentMethod" => array(
     "type" => "scheme",
-    "number" =>"4111111145551142",
-    "expiryMonth"=> "10",
-    "expiryYear"=> "2020",
+    "number" =>$cardNum,
+    "expiryMonth"=> substr($expDate,0,2),
+    "expiryYear"=>'20'. substr($expDate,3,2),
     "holderName"=>"John Smith",
-    "cvc"=> "737"
+    "cvc"=> $cvv
   ),
   "returnUrl" => "final.php",
   "merchantAccount" => "SupportRecruitementCOM"
