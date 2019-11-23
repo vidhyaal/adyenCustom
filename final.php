@@ -28,6 +28,6 @@ $params = array(
 );
 $result = $service->payments($params);
 $_SESSION['result'] = $result;
-echo '<pre>';
-print_r($result) ;
+echo "<h2>Your transaction is <b>".$result['responseCode]."</b> Your transaction refernece number is <b>".$result['networkTxReference']."</b>";
+
 ?>
